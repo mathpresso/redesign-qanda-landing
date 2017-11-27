@@ -125,8 +125,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "media"),
 ]
 
-STATIC_ROOT = 'static'
-STATIC_URL = '/static/'
+STATIC_ROOT = 'vendor/css'
+STATIC_URL = '/vendor/'
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
 
