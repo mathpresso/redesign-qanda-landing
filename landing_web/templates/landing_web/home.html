@@ -1,1 +1,61 @@
-Hello, home!
+{% load staticfiles %}
+{% load compress %}
+
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css" media="screen, print">
+    @font-face {
+      font-family: "Noto Sans KR";
+      font-weight: 400;
+      src: url("{% static 'fonts/notokr-regular.eot' %}") format('eot'),
+           url("{% static 'fonts/notokr-regular.woff' %}") format('woff'),
+           url("{% static 'fonts/notokr-regular.woff2' %}") format('woff2');
+    }
+
+    @font-face {
+      font-family: "Noto Sans KR";
+      font-weight: 500;
+      src: url("{% static 'fonts/notokr-medium.eot' %}") format('eot'),
+           url("{% static 'fonts/notokr-medium.woff' %}") format('woff'),
+           url("{% static 'fonts/notokr-medium.woff2' %}") format('woff2');
+    }
+
+    @font-face {
+      font-family: "Noto Sans KR";
+      font-weight: 700;
+      src: url("{% static 'fonts/notokr-bold.eot' %}") format('eot'),
+           url("{% static 'fonts/notokr-bold.woff' %}") format('woff'),
+           url("{% static 'fonts/notokr-bold.woff2' %}") format('woff2');
+    }
+
+    .noto-regular {
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: 400;
+    }
+
+    .noto-medium {
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: 500;
+    }
+
+    .noto-bold {
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: 700;
+    }
+  </style>
+  {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "css/main.scss" %}" />
+  {% endcompress %}
+</head>
+<body>
+  <h1 class="noto-regular">노토 산스 레귤러 Noto Sans Regular</h1>
+  <h1 class="noto-medium">노토 산스 미디엄</h1>
+  <h1 class="noto-bold">노토 산스 볼드!</h1>
+</body>
+</html>

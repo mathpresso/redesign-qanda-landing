@@ -1,0 +1,7 @@
+@import './partials/_base.scss';
+@import './modules/_all.scss';
+
+body {
+  font-family: $noto-sans;
+  color: $cyan;
+}
