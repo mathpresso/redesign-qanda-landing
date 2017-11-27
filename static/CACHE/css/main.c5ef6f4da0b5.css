@@ -1,0 +1,88 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, vendor/css/partials/_base.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, vendor/css/partials/_base.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 31, vendor/css/partials/_base.scss */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.5;
+  font-size: 30px; }
+
+/* line 36, vendor/css/partials/_base.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 39, vendor/css/partials/_base.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 42, vendor/css/partials/_base.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* line 47, vendor/css/partials/_base.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 52, vendor/css/partials/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; }
+
+/* line 56, vendor/css/partials/_base.scss */
+h1 {
+  font-size: 2rem; }
+
+/* line 57, vendor/css/partials/_base.scss */
+h2 {
+  font-size: 1.8rem; }
+
+/* line 58, vendor/css/partials/_base.scss */
+h3 {
+  font-size: 1.33333rem; }
+
+/* line 59, vendor/css/partials/_base.scss */
+h4 {
+  font-size: 1rem; }
+
+/* line 60, vendor/css/partials/_base.scss */
+h5 {
+  font-size: 0.86666rem; }
+
+/* line 61, vendor/css/partials/_base.scss */
+h6 {
+  font-size: 0.7rem; }
+
+/* line 4, vendor/css/main.scss */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #1FA5B0; }

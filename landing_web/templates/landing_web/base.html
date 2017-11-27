@@ -18,13 +18,14 @@
            url("{% static 'fonts/notokr-regular.woff2' %}") format('woff2');
     }
 
-    @font-face {
-      font-family: "Noto Sans KR";
-      font-weight: 500;
-      src: url("{% static 'fonts/notokr-medium.eot' %}") format('eot'),
-           url("{% static 'fonts/notokr-medium.woff' %}") format('woff'),
-           url("{% static 'fonts/notokr-medium.woff2' %}") format('woff2');
-    }
+{#    medium을 사용할 수도 있음 #}
+{#    @font-face {#}
+{#      font-family: "Noto Sans KR";#}
+{#      font-weight: 500;#}
+{#      src: url("{% static 'fonts/notokr-medium.eot' %}") format('eot'),#}
+{#           url("{% static 'fonts/notokr-medium.woff' %}") format('woff'),#}
+{#           url("{% static 'fonts/notokr-medium.woff2' %}") format('woff2');#}
+{#    }#}
 
     @font-face {
       font-family: "Noto Sans KR";
@@ -33,29 +34,17 @@
            url("{% static 'fonts/notokr-bold.woff' %}") format('woff'),
            url("{% static 'fonts/notokr-bold.woff2' %}") format('woff2');
     }
-
-    .noto-regular {
-      font-family: "Noto Sans KR", sans-serif;
-      font-weight: 400;
-    }
-
-    .noto-medium {
-      font-family: "Noto Sans KR", sans-serif;
-      font-weight: 500;
-    }
-
-    .noto-bold {
-      font-family: "Noto Sans KR", sans-serif;
-      font-weight: 700;
-    }
   </style>
   {% compress css %}
     <link rel="stylesheet" type="text/x-scss" href="{% static "css/main.scss" %}" />
   {% endcompress %}
 </head>
 <body>
-  <h1 class="noto-regular">노토 산스 레귤러 Noto Sans Regular</h1>
-  <h1 class="noto-medium">노토 산스 미디엄</h1>
-  <h1 class="noto-bold">노토 산스 볼드!</h1>
+  {% include 'landing_web/header.html' %}
+
+  {% block container %}
+  {% endblock %}
+
+  {% include 'landing_web/footer.html' %}
 </body>
 </html>
