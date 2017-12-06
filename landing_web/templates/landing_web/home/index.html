@@ -1,12 +1,13 @@
 {% extends "landing_web/base.html" %}
+{% load staticfiles %}
 
 {% block container %}
-  안녕 난 홈이야.
-  {% include "landing_web/home/partials/container1.html" %}
-  {% include "landing_web/home/partials/container2.html" %}
-  {% include "landing_web/home/partials/container3.html" %}
-  {% include "landing_web/home/partials/container4.html" %}
-  {% include "landing_web/home/partials/container5.html" %}
-  {% include "landing_web/home/partials/container6.html" %}
-  {% include "landing_web/home/partials/container7.html" %}
+  {% include "landing_web/home/partials/cover.html" %}
+  {% include "landing_web/home/partials/page1.html" %}
+  {% include "landing_web/home/partials/page2.html" %}
+  {% include "landing_web/home/partials/page3.html" %}
+  {% include "landing_web/home/partials/page4.html" %}
+  {% include "landing_web/home/partials/page5.html" %}
+  {% include "landing_web/home/partials/page6.html" %}
+  {% include "landing_web/home/partials/page7.html" %}
 {% endblock %}

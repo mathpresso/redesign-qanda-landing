@@ -1,0 +1,68 @@
+{% load staticfiles %}
+
+<div class="page page3">
+  <div class="wrapper">
+    <div class="content slide-container">
+      <div class="hr bg-black"></div>
+      <h1 class="title"><b><span class="cyan">5초</span> 풀이검색</b></h1>
+      <h3 class="desc">
+        모르는 문제의 풀이를 <br>
+        무료로 사진 찍어 검색하세요.
+      </h3>
+      <div class="screen-slider">
+        <img class="mockup pc-only" src="{% static 'img/1-phone.png' %}" alt="목업 이미지">
+        <img class="mockup mobile-only" src="{% static 'img/mobile-mockup.png' %}" alt="목업 이미지">
+        <div class="screens">
+          <img class="selected" style="z-index: 3;" src="{% static 'img/image-1@3x.jpg' %}" alt="">
+          <img style="z-index: 2;" src="{% static 'img/image-2@3x.jpg' %}" alt="">
+          <img style="z-index: 1;" src="{% static 'img/image-3@3x.jpg' %}" alt="">
+        </div>
+      </div>
+      <ul class="slide-tab">
+        <li class="slide-item selected" value="1"><a href="">편리함</a></li>
+        <li class="slide-item" value="2"><a href="">무료 이용</a></li>
+        <li class="slide-item" value="3"><a href="">높은 검색률</a></li>
+      </ul>
+      <div class="slide-desc selected">
+        <p>촬영 후 단 5초면 풀이가 검색됩니다.</p>
+      </div>
+      <div class="slide-desc">
+        <p>무료로 무제한 이용 가능합니다.</p>
+      </div>
+      <div class="slide-desc">
+        <p>현재 검색률 75%로 점점 더 높아질 예정입니다.</p>
+        <h4 class="dark-gray" style="margin-top: 20px;">*2017년 12월 고등 수학, 과학 기준</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+
+    $(".page3 .slide-item").on("click", function() {
+      $(".slide-tab .selected").removeClass('selected');
+      $(".slide-desc.selected").removeClass('selected');
+      $(".slide-desc").eq($(this).val()-1).addClass('selected');
+
+      $(this).addClass('selected');
+      var selected_element = $(".screens img").eq($(this).val()-1);
+      var prev_selected_element = $(".screens .selected");
+
+      // Initialize z-index of all images.
+      $(".screens img").css("z-index", 1);
+
+      // Place the prev-selected image under the selected image.
+      prev_selected_element.removeClass("selected");
+      prev_selected_element.css("z-index", 2);
+
+      // Push the selected image to the top.!
+      selected_element.css("z-index", 3);
+
+      // Start the animation by adding ".selected"
+      selected_element.addClass("selected");
+
+      return false;
+    });
+  });
+</script>

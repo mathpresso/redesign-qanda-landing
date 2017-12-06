@@ -1,3 +1,23 @@
+{% load staticfiles %}
+
 <div class="header">
-난 헤더야
+  <div class="wrapper">
+    <div class="logo">
+      <a href=""><img src="{% static 'img/logo.png' %}" alt=""></a>
+    </div>
+    <ul class="header-menu">
+      <li class="header-item active"><a href="">앱</a></li>
+      <li class="header-item"><a href="">가맹점</a></li>
+    </ul>
+  </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    var activeHeaderItem = $(".header-menu .active");
+    $(".header-item").hover(
+      function() { activeHeaderItem.removeClass("active"); },
+      function() { activeHeaderItem.addClass("active"); }
+    )
+  });
+</script>@

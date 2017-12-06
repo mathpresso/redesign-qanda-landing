@@ -7,8 +7,20 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta http-equiv="X-UA€-Compatible" content="ie=edge">
+
+  {# site-info #}
+  <title>수학 5초 풀이 검색 앱</title>
+  <meta name="description" content="콴다에서 5초 만에 무료 풀이 검색 후, 모르는 부분은 실시간 답변받는 편리함을 공유하세요.
+">
+
+  {# favicon #}
+  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+  <link rel="apple-touch-icon-precomposed" href="{% static 'img/favicon-152.png'%}">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="{% static 'img/favicon-144.png' %}">
+
+
   <style type="text/css" media="screen, print">
     @font-face {
       font-family: "Noto Sans KR";
@@ -17,15 +29,6 @@
            url("{% static 'fonts/notokr-regular.woff' %}") format('woff'),
            url("{% static 'fonts/notokr-regular.woff2' %}") format('woff2');
     }
-
-{#    medium을 사용할 수도 있음 #}
-{#    @font-face {#}
-{#      font-family: "Noto Sans KR";#}
-{#      font-weight: 500;#}
-{#      src: url("{% static 'fonts/notokr-medium.eot' %}") format('eot'),#}
-{#           url("{% static 'fonts/notokr-medium.woff' %}") format('woff'),#}
-{#           url("{% static 'fonts/notokr-medium.woff2' %}") format('woff2');#}
-{#    }#}
 
     @font-face {
       font-family: "Noto Sans KR";
@@ -38,6 +41,9 @@
   {% compress css %}
     <link rel="stylesheet" type="text/x-scss" href="{% static "css/main.scss" %}" />
   {% endcompress %}
+  <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+
+
 </head>
 <body>
   {% include 'landing_web/header.html' %}
@@ -46,5 +52,8 @@
   {% endblock %}
 
   {% include 'landing_web/footer.html' %}
+
+  {% block javascript %}
+  {% endblock %}
 </body>
 </html>

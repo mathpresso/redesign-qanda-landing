@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+<div class="container-wrapper container-5">
+  <div class="container flex-container">
+    <div class="left-container">
+      <img src="{% static 'img/1-phone.png' %}" alt="">
+    </div>
+    <div class="right-container">
+      <div class="hr-white"></div>
+      <h1><span class="orange">선생님과</span> 질문 답변</h1>
+      <h4>검증된 선생님께 실시간 답변 받으세요.</h4>
+      <ul class="slide-white">
+        <li class="slide-item active"><a href="">검증된 선생님</a></li>
+        <li class="slide-item"><a href="">실시간 답변</a></li>
+        <li class="slide-item"><a href="">1:1 질문</a></li>
+      </ul>
+      <div class="slide-msg">
+        <h5>
+          서울대, KAIST 출신을 비롯한 <br>
+          검증된 선생님 6000여 명 <br> <br>
+          * 2017년 12월 기준
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    var activeSlideItem2 = $(".container-5 .slide-white .active");
+    $(".container-5 .slide-item").hover(
+      function() { activeSlideItem2.removeClass("active"); },
+      function() { activeSlideItem2.addClass("active"); }
+    )
+  });
+</script>

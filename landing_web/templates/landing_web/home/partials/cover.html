@@ -1,0 +1,33 @@
+{% load staticfiles %}
+
+<div class="page cover bg-gradient-white-to-black">
+  <div class="wrapper">
+    <div class="content">
+      <h1 class="title">
+        모르는 문제를 <br>
+        사진 촬영 한 번으로 알 수 있습니다.
+      </h1>
+      <h3 class="desc">
+        정답으로 가는 가장 빠른 길, <span class="orange">콴다</span>
+      </h3>
+      <div class="download">
+        <a href=""><img src="{% static 'img/btn-playstore.png' %}?version=0.0.1" alt=""></a>
+        <a href=""><img src="{% static 'img/btn-appstore.png' %}?version=0.0.1" alt=""></a>
+      </div>
+      <div class="img-container pc-only">
+        <img src="{% static 'img/1-phone.png' %}" alt="">
+      </div>
+    </div>
+    <div class="img-content mobile-only">
+      <img src="{% static 'img/1-phone.png' %}" alt="">
+    </div>
+  </div>
+</div>
+
+<script>!
+  $(document).ready(function() {
+    $(".text").css("visibility", "visible");
+    $(".text").css("transform", "translateY(0)");
+    $(".text").css("opacity", 1);
+  })
+</script>
