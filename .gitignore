@@ -226,3 +226,23 @@ pip-selfcheck.json
 # to 'run' anything within it since any particular cookiecutter
 # is declarative by nature.
 .idea/
+
+
+### webpack
+# Reference: https://github.com/webpack/webpack/blob/master/.gitignore
+/node_modules
+/test/js
+/test/browsertest/js
+/test/fixtures/temp-cache-fixture
+/benchmark/js
+/benchmark/fixtures
+/examples/**/js
+/coverage
+.DS_Store
+*.log
+.idea
+.vscode
+
+staticfiles/
+vendor/img/
+vendor/css/fonts/
