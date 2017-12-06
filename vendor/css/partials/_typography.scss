@@ -1,0 +1,49 @@
+/*---------------------------------------------
+# common
+---------------------------------------------*/
+html {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+
+.regular { font-weight: 400; }
+.bold { font-weight: 700; }
+
+/*---------------------------------------------
+# pc
+---------------------------------------------*/
+@media only screen and (min-width: 769px) {
+  h1 { font-size: 50px; font-size: 2.94117rem; }
+  h2 { font-size: 30px; font-size: 1.76470rem; }
+  h3, a, p { font-size:24px; font-size: 1.41176rem; }
+  h4 { font-size: 17px; font-size: 1rem; }
+  h5 { font-size: 14.7px; font-size: 0.86666rem; }
+  h6 { font-size: 11.9px; font-size: 0.7rem; }
+}
+
+/*---------------------------------------------
+# mobile
+---------------------------------------------*/
+@media only screen and (min-width: 376px) and (max-width: 768px) {
+  h1 { font-size: 23.8px; font-size: 1.4rem; }
+  h2 { font-size: 20.4px; font-size: 1.2rem; }
+  h3, a, p { font-size: 13.6px; font-size: 0.8rem;}
+  h4 { font-size: 11.9px; font-size: 0.7rem; }
+  h5 { font-size: 10.2px; font-size: 0.6rem; }
+  h6 { font-size: 8.5px; font-size: 0.5rem; }
+}
+
+/*---------------------------------------------
+# mobile-small
+---------------------------------------------*/
+@media only screen and (max-width: 375px) {
+  h1 { font-size: 19.5px; font-size: 1.15rem; }
+  h2 { font-size: 17px; font-size: 1.0rem; }
+  h3, a { font-size: 13.6px; font-size: 0.8rem;}
+  h4 { font-size: 11.9px; font-size: 0.7rem; }
+  p, h5 { font-size: 10.2px; font-size: 0.6rem; }
+  h6 { font-size: 8.5px; font-size: 0.5rem; }
+}
+

@@ -1,7 +1,9 @@
-@import './partials/_base.scss';
-@import './modules/_all.scss';
+@import 'modules/all';
+@import 'partials/reset';
+@import 'partials/typography';
+@import 'partials/color';
+@import 'partials/components';
+@import 'partials/animations';
+@import 'partials/header';
+@import 'partials/home';
 
-body {
-  font-family: $noto-sans;
-  color: $cyan;
-}

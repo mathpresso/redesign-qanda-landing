@@ -1,0 +1,271 @@
+//    .question-container-wrapper {
+//      //overflow-x: scroll;
+//      overflow-y: visible;
+//      padding-bottom: 1rem;
+//
+//      &::-webkit-scrollbar {
+//        width: 3px;
+//        height: 3px;
+//        background-color: #e8e8e8;
+//      }
+//
+//      &::-webkit-scrollbar-thumb {
+//        background-color: #000;
+//      }
+//
+//      .question-holder {
+//        transform: translateX(0px);
+//        display: inline-flex;
+//        overflow: visible;
+//
+//        .question-wrapper {
+//          margin-right: 10px;
+//
+//          .question {
+//            z-index: 1999;
+//            border: 1px solid red;
+//            width: 600px;
+//            height: 435px;
+//            padding: 1rem;
+//            color: $white;
+//            background-color: rgba(0, 0, 0, 0.65);
+//
+//            h4 {
+//              font-weight: 700;
+//            }
+//
+//            .date { margin-bottom: 1rem; }
+//            .subject { margin-bottom: 6rem; }
+//            .meta2 { float: left; }
+//            .meta3 { float: right; }
+//          }
+//        }
+//      }
+//    }
+//  }
+//
+//  &.container-4 {
+//    background: url("/vendor/img/4-bg.png") 40% 50% no-repeat;
+//  }
+//
+//  &.container-5 {
+//    border: 1px solid red;
+//    background: url("/vendor/img/4-bgblack.jpg") no-repeat;
+//    background-color: #000;
+
+/*------------------------------------------
+# common
+------------------------------------------*/
+.page1 {
+  .wrapper {
+    display: block;
+
+    .title {
+      font-weight: 400;
+    }
+
+  }
+  .slide-wrapper {
+    overflow: hidden;
+
+    .slide-list {
+      display: inline-flex;
+
+      .question {
+        position: relative;
+        margin-right: 10px;
+        border: 1px solid red;
+        width: 400px;
+        height: 300px;
+        padding: 20px;
+        color: $white;
+        background-color: rgba(0, 0, 0, 0.65);
+
+        h2 {
+          font-weight: 700;
+        }
+
+        .date {
+          margin-bottom: 1rem;
+        }
+        .subject {
+          margin-bottom: 6rem;
+        }
+        .meta2 {
+          position: absolute;
+          left: 20px;
+          bottom: 12px;
+        }
+        .meta3 {
+          position: absolute;
+          right: 20px;
+          bottom: 12px;
+        }
+      }
+    }
+  }
+
+}
+
+/*--------------------------------------------
+# pc
+--------------------------------------------*/
+@media only screen and (min-width: 769px) {
+  .page {
+    padding: 90px 0;
+    overflow: hidden;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+    margin: auto;
+    min-width: 1200px;
+    padding: 0 15px;
+  }
+
+  .cover {
+    padding: 0;
+    .wrapper {
+      display: flex;
+      align-items: center;
+      height: 1080px;
+
+      .content {
+        position: relative;
+
+        .download {
+          padding: 30px 0;
+
+          img {
+            margin-right: 20px;
+          }
+        }
+
+        .img-container {
+          position: absolute;
+          top: -170px;
+          right: -650px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .page1 {
+    .wrapper {
+    }
+  }
+
+  .page2 {
+    .wrapper {
+
+      .content {
+        position: relative;
+      }
+
+      .img-content {
+        position: absolute;
+        top: -170px;
+        right: -650px;
+
+        img {
+          width: 400px;
+          //height: auto;
+        }
+      }
+    }
+  }
+
+  .page3 {
+    height: 960px;
+
+    .wrapper {
+      //border: 1px solid red;
+      display: block;
+      position: relative;
+      height: 100%;
+
+      .content {
+        //border: 1px solid black;
+        margin-top: -220px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+
+        h3 {
+          margin: 30px 0 120px 0;
+        }
+
+      }
+    }
+  }
+}
+
+/*--------------------------------------------
+# mobile
+--------------------------------------------*/
+@media only screen and (max-width: 768px) {
+  .page {
+    text-align: center;
+
+    .wrapper {
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  .wrapper {
+    min-width: 320px;
+    display: block;
+    height: auto;
+
+    .content {
+      .download {
+      padding: 0;
+
+        img {
+          width: 100px;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+  .cover {
+    margin-top: 50px;
+    height: auto;
+
+    .wrapper {
+      .img-content {
+        margin: 25px 0;
+
+        img {
+          transform: translateX(19%);
+          width: 291.5px !important;
+        }
+      }
+    }
+  }
+
+  .page1 {
+    .wrapper {
+    }
+  }
+
+  .page2 {
+    .wrapper {
+
+      .img-content {
+        width: 130%;
+
+        img {
+          transform: translateX(-10%);
+        }
+      }
+    }
+  }
+}

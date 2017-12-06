@@ -1,0 +1,127 @@
+//////////////////////////
+// Mobile screen slides //
+//////////////////////////
+.screen-slide {
+  animation: screen-slide 0.65s cubic-bezier(.23,.78,.67,.92);
+}
+
+// For 0.65s, screen out -> screen in
+@keyframes screen-slide {
+  0%   { transform: translateX(274px); }
+  100% { transform: translateX(0); }
+}
+
+////////////////////////////////////////////////
+// Element moves from top to initial position //
+////////////////////////////////////////////////
+.top-down-100-animation { animation: top-down-100 1.2s cubic-bezier(.23,.78,.67,.92); }
+.top-down-75-animation { animation: top-down-75 1.2s cubic-bezier(.23,.78,.67,.92); }
+.top-down-50-animation { animation: top-down-50 1.2s cubic-bezier(.23,.78,.67,.92); }
+.top-down-25-animation { animation: top-down-25 1.2s cubic-bezier(.23,.78,.67,.92); }
+
+@keyframes top-down-100 {
+  0% {
+    opacity: 0;
+    transform: translateX(1374px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes top-down-75 {
+  0% {
+    opacity: 0;
+    transform: translateX(916px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes top-down-50 {
+  0% {
+    opacity: 0;
+    transform: translateX(458px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes top-down-25 {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+///////////////////////////////////////////////////
+// Element moves from bottom to initial position //
+///////////////////////////////////////////////////
+.bottom-up-animation {
+  animation: bottom-up 0.65s cubic-bezier(.23,.78,.67,.92);
+}
+
+@keyframes bottom-up {
+  0% {
+    opacity: 0.7;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/////////////////////////////////////////////////
+// Element moves from left to initial position //
+/////////////////////////////////////////////////
+.from-left-animation {
+  animation: from-left 0.65s cubic-bezier(.23,.78,.67,.92);
+}
+
+@keyframes from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/////////////////////////////////////////////////
+// Element moves from left to initial position //
+/////////////////////////////////////////////////
+.from-right-animation {
+  animation: from-right 0.65s cubic-bezier(.23,.78,.67,.92);
+}
+
+@keyframes from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*---------------------------------------------
+# keyframes
+---------------------------------------------*/
+// For 0.65s, screen out -> screen in
+@keyframes slide {
+  0%   { transform: translateX(291.5px); }
+  100% { transform: translateX(0); }
+}

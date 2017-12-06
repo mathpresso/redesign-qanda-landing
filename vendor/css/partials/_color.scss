@@ -1,0 +1,16 @@
+// color
+.orange { color: $orange; }
+.cyan { color: $cyan; }
+.black { color: $black; }
+.dark-gray { color: $dark-gray; }
+.warm-gray { color: $warm-gray; }
+.white { color: $white; }
+
+// background-color
+.bg-orange { background-color: $orange; }
+.bg-cyan { background-color: $cyan; }
+.bg-black { background-color: $black; }
+.bg-dark-gray { background-color: $dark-gray; }
+.bg-warm-gray { background-color: $warm-gray; }
+.bg-white { background-color: $white; }
+.bg-gradient-white-to-black { background-image: linear-gradient(#ffffff, #f0f0f0); }

@@ -3,6 +3,18 @@
    License: none (public domain)
 */
 
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,10 +31,10 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -30,8 +42,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     font-family: "Noto Sans KR", sans-serif;
-	line-height: 1.5;
-    font-size: 30px;
 }
 ol, ul {
 	list-style: none;
@@ -49,13 +59,19 @@ table {
 	border-spacing: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
+a {
+  text-decoration: none;
+
+  &:visited {
+      color: inherit;
+  }
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.33333rem; }
-h4 { font-size: 1rem; }
-h5 { font-size: 0.86666rem; }
-h6 { font-size: 0.7rem; }
+b {
+  font-weight: 700;
+}
+
+img {
+  width: auto;
+  height: auto !important;
+}
