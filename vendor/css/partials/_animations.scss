@@ -117,11 +117,13 @@
   }
 }
 
-/*---------------------------------------------
-# keyframes
----------------------------------------------*/
 // For 0.65s, screen out -> screen in
 @keyframes slide {
   0%   { transform: translateX(291.5px); }
   100% { transform: translateX(0); }
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1 }
 }

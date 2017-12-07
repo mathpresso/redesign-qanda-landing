@@ -1,25 +1,38 @@
 {% load staticfiles %}
 
-<div class="container-wrapper container-5">
-  <div class="container flex-container">
-    <div class="left-container">
-      <img src="{% static 'img/1-phone.png' %}" alt="">
-    </div>
-    <div class="right-container">
-      <div class="hr-white"></div>
-      <h1><span class="orange">선생님과</span> 질문 답변</h1>
-      <h4>검증된 선생님께 실시간 답변 받으세요.</h4>
-      <ul class="slide-white">
-        <li class="slide-item active"><a href="">검증된 선생님</a></li>
-        <li class="slide-item"><a href="">실시간 답변</a></li>
-        <li class="slide-item"><a href="">1:1 질문</a></li>
-      </ul>
-      <div class="slide-msg">
-        <h5>
-          서울대, KAIST 출신을 비롯한 <br>
-          검증된 선생님 6000여 명 <br> <br>
-          * 2017년 12월 기준
-        </h5>
+<div class="page page4">
+  <div class="wrapper">
+    <div class="content screen-slider-container">
+      <div class="hr bg-white"></div>
+      <h1 class="title"><span class="orange">선생님과</span> 질문 답변</h1>
+      <h3 class="desc">검증된 선생님께 실시간 답변 받으세요.</h3>
+
+      <div class="device">
+        <img class="mockup pc-only" src="{% static 'img/1-phone.png' %}" alt="목업 이미지">
+        <img class="mockup mobile-only" src="{% static 'img/mobile-mockup.png' %}" alt="목업 이미지">
+        <div class="screens">
+          <img class="selected" style="z-index: 3;" src="{% static 'img/image-4@3x.jpg' %}" alt="">
+          <img style="z-index: 2;" src="{% static 'img/image-5@3x.jpg' %}" alt="">
+          <img style="z-index: 1;" src="{% static 'img/image-6@3x.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="slide-controller">
+        <ul class="slide-tab">
+          <li class="slide-item selected" value="1"><a href="">검증된 선생님</a></li>
+          <li class="slide-item" value="2"><a href="">실시간 답변</a></li>
+          <li class="slide-item" value="3"><a href="">1:1 질문</a></li>
+        </ul>
+        <div class="slide-desc selected">
+          <p>서울대, KAIST 출신을 비롯한 6,000여명의 <br> 검증된 선생님께 질문해보세요.</p>
+          <h4 class="dark-gray" style="margin-top: 20px;">*2017년 12월 기준</h4>
+        </div>
+        <div class="slide-desc">
+          <p>전과목 어떤 문제든지 이해될 때까지 <br> 실시간으로 답변 받을 수 있습니다.</p>
+          <h4 class="dark-gray" style="margin-top: 20px;">*평균 답변 시간: 13분 (2017년 12월 기준)</h4>
+        </div>
+        <div class="slide-desc">
+          <p>원하는 선생님께 1:1 질문도 가능합니다.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -27,10 +40,28 @@
 
 <script>
   $(document).ready(function() {
-    var activeSlideItem2 = $(".container-5 .slide-white .active");
-    $(".container-5 .slide-item").hover(
-      function() { activeSlideItem2.removeClass("active"); },
-      function() { activeSlideItem2.addClass("active"); }
-    )
+    $(".page4 .slide-item").on("click", function() {
+      $(".page4 .selected").removeClass('selected');
+      $(".page4 .slide-desc").eq($(this).val()-1).addClass('selected');
+
+      $(this).addClass('selected');
+      var selected_element = $(".page4 .screens img").eq($(this).val()-1);
+      var prev_selected_element = $(".page4 .screens .selected");
+
+      // Initialize z-index of all images.
+      $(".page4 .screens img").css("z-index", 1);
+
+      // Place the prev-selected image under the selected image.
+      prev_selected_element.removeClass("selected");
+      prev_selected_element.css("z-index", 2);
+
+      // Push the selected image to the top.!
+      selected_element.css("z-index", 3);
+
+      // Start the animation by adding ".selected"
+      selected_element.addClass("selected");
+
+      return false;
+    });
   });
 </script>

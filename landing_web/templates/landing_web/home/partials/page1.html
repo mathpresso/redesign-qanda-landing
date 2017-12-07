@@ -7,116 +7,42 @@
         총 <b>111,429명</b> 학생들이 <br>
         누적 <b>547,054개</b> 문제를 해결했습니다.
       </h1>
-      <h5 class="desc dark-gray">* 2017년 11월 16일 기준</h5>
+      <h4 class="sub-desc-small">* 2017년 11월 16일 기준</h4>
     </div>
-    <div class="slide-wrapper">
-      <ul class="slide-list">
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <h3 class="date">2017년 6월 22일</h3>
-            <h2 class="school">고등학교</h2>
-            <h2 class="subject">기하와 벡터</h2>
-            <h3 class="meta2">질문 답변</h3>
-            <h3 class="meta3">상위 4%</h3>
-            <div class="clearer" style="clear: both;"></div>
-          </div>
-        </li>
+    <div class="btn-slider-wrapper">
+      <ul class="slide-holder">
+        {% for question in questions %}
+          <li class="slide-item" style="background: url('{{ question.image_url }}');">
+            <div class="question">
+              <h3 class="date">{{ question.date }}</h3>
+              <h2 class="school">{{ question.school }}</h2>
+              <h2 class="subject">{{ question.subject }}</h2>
+              <h3 class="type">{{ question.type }}</h3>
+              <h3 class="extra-info">{{ question.extra_info }}</h3>
+              <div class="clearer" style="clear: both;"></div>
+            </div>
+          </li>
+        {% endfor %}
       </ul>
+      <button class="slide-btn left pc-only">
+        <img style="width: 30px; top: 30%; left: 35%;" class="left-arrow" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAABcAQMAAAAbEQSfAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA9JREFUeNpjYBgFo2D4AgAC4AABi3QKrwAAAABJRU5ErkJggg==">
+      </button>
+      <button class="slide-btn right pc-only">
+        <img style="width: 30px; top: 30%; left: 40%;" class="right-arrow" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAABcAQMAAAAbEQSfAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA9JREFUeNpjYBgFo2D4AgAC4AABi3QKrwAAAABJRU5ErkJggg==">
+      </button>
+      <h3 class="sub-desc-medium pc-only">* 실제 콴다에서 해결된 문제들로 <b>클릭</b> 시 검색 또는 답변 내역을 확인할 수 있습니다.</h3>
     </div>
-    <h4 class="meta">* 실제 콴다에서 해결된 문제들로 클릭 시 검색 또는 답변 내역을 확인할 수 있습니다.</h4>
+  </div>
+  <div class="question-detail-container">
+    <div class="question-detail-scroller">
+      <img class="chat-scroll-image" src="/vendor/img/chat-1@2x.jpg" alt="">
+    </div>
+    <button class="cancel-detail-btn">
+      안녕세상아
+    </button>
   </div>
 </div>
 
 {% block javascript %}
-  <script src="{% static 'js/animations.js' %}"></script>
+  <script src="{% static 'js/animations.js' %}?version=0.0.7"></script>
 {% endblock %}

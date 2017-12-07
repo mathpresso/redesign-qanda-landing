@@ -1,41 +1,65 @@
-<div class="container-wrapper">
-  <div class="container container-2">
-    <hr>
-    <h3>
-      총 11만 명의 학생과 공신력 높은 교육 회사들이 선택한 <br>
-      믿을 수 있는 교육 앱입니다.
-    </h3>
-    <div class="promo bg-promo">
-      <h5>
-        관련 교육 앱 <br>
-        Google Play Store <br>
-        평점 1위
-      </h5>
-    </div>
-    <div class="promo bg-promo">
-      <h5>
-        Google이 선정한 <br>
-        “대한민국 앱의 <br>
-        숨겨진 보석“
-      </h5>
-    </div>
-    <div class="promo bg-promo">
-      <h5>
-        Google <br>
-        ‘App 앰베서더 <br>
-        파트너’ 선정
-      </h5>
-    </div>
-    <div class="question-container-wrapper">
-      <div class="question-container">
-        <div class="question">
-          <img src="" alt="" class="profile">
-          <h5 class="date">2017년 11월 6일</h5>
-          <span class="star">별별별별별</span>
-          <p>정말 좋아요 제가 이해가 잘 안돼가는 문제들이 많았는데요 이앱을 설치해보니...</p>
+<div class="page page5">
+  <div class="wrapper">
+    <div class="content">
+      <h1 class="title">
+        총 11만 명의 학생과 공신력 높은 교육 회사들이 선택한 <br>
+        믿을 수 있는 교육 앱입니다.
+      </h1>
+      <div class="certs">
+        <div class="cert">
+          <h3>
+            관련 교육 앱 <br>
+            Google Play Store <br>
+            평점 1위, 4.7점
+          </h3>
+        </div>
+        <div class="cert">
+          <h3>
+            Google이 선정한 <br>
+            “대한민국 앱의 <br>
+            숨겨진 보석“
+          </h3>
+        </div>
+        <div class="cert">
+          <h3>
+            Google <br>
+            ‘App 앰베서더 <br>
+            파트너’ 선정
+          </h3>
         </div>
       </div>
+      <h4 class="sub-desc-small">* 2017년 11월 16일 기준</h4>
     </div>
-    <h4>* 실제 작성된 후기들로 Playstore에서 확인하실 수 있습니다.</h4>
+    <div class="btn-slider-wrapper">
+      <ul class="slide-holder">
+        {% for review in reviews %}
+        <li class="slide-item">
+          <div class="review">
+            <div class="review-img-container">
+              <img src="{{ review.profile_image_url }}" class="profile-img">
+            </div>
+            <div class="review-content-container">
+              <h4 class="nickname">{{ review.nickname }}</h4>
+              <h4 class="date dark-gray">{{ review.date }}</h4>
+              <div class="star-container">
+                {% for i in review.star_count %}
+                  <img class="star" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiAQMAAAAAiZmBAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAAxJREFUeNpjYBg+AAAAzAABWwk0zgAAAABJRU5ErkJggg==">
+                {% endfor %}
+              </div>
+              <h4 class="content">{{ review.content }}</h4>
+              <div class="clearer" style="clear: both;"></div>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      <button class="slide-btn left pc-only">
+        <img style="width: 30px; top: 30%; left: 35%;" class="left-arrow" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAABcAQMAAAAbEQSfAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA9JREFUeNpjYBgFo2D4AgAC4AABi3QKrwAAAABJRU5ErkJggg==">
+      </button>
+      <button class="slide-btn right pc-only">
+        <img style="width: 30px; top: 30%; left: 40%;" class="right-arrow" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAABcAQMAAAAbEQSfAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA9JREFUeNpjYBgFo2D4AgAC4AABi3QKrwAAAABJRU5ErkJggg==">
+      </button>
+      <h3 class="sub-desc-medium">* 실제 작성된 후기들로 Playstore에서 확인하실 수 있습니다.</h3>
+    </div>
   </div>
 </div>
