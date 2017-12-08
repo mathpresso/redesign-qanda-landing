@@ -21,7 +21,10 @@
 
 $(document).ready(function () {
   $(".cover .title, .cover .desc, .cover .btn-container").addClass("bottom-up-animation-1500ms");
-  $(".cover .img-container, .cover .img-content").addClass("hover-animation-2000ms");
+  setTimeout(function() {
+    $(".cover .img-container, .cover .img-content").addClass("hover-animation-2000ms");
+  }, 1500);
+
 
   var question_slide_btn_right = $(".page1 .btn-slider-wrapper .slide-btn.right");
   var question_slide_btn_left = $(".page1 .btn-slider-wrapper .slide-btn.left");
