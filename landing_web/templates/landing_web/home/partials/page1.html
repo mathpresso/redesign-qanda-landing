@@ -12,7 +12,7 @@
     <div class="btn-slider-wrapper">
       <ul class="slide-holder">
         {% for question in questions %}
-          <li class="slide-item" style="background: url('{{ question.image_url }}');">
+          <li class="slide-item hidden" style="background: url('{{ question.image_url }}');">
             <div class="question">
               <h3 class="date">{{ question.date }}</h3>
               <h2 class="school">{{ question.school }}</h2>
@@ -34,7 +34,7 @@
     </div>
     <h3 class="scroll-gesture bg-warm-gray2 cyan mobile-only">
       <img class="gesture-cyan" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAABkAQMAAAA1/RXmAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABNJREFUeNpjYBgFo2AUjIJRAAMABRQAAa2pV/wAAAAASUVORK5CYII=">
-       넘겨서 보기
+       넘기며 눌러보기
     </h3>
   </div>
   <div class="question-detail-container">

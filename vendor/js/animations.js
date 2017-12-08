@@ -1,3 +1,5 @@
+// deprecated :: 상하 스크롤 -> 좌우 스크롤로 바꿔줌. \
+// Reference: www.plus-ex.com
 // $(document).ready(function() {
   // // Scroll horizontally when scrolling vertically in question-container-wrapper
   // var scroller = $("#scroller");
@@ -20,12 +22,7 @@
 // }
 
 $(document).ready(function () {
-  $(".cover .title, .cover .desc, .cover .btn-container").addClass("bottom-up-animation-1500ms");
-  setTimeout(function() {
-    $(".cover .img-container, .cover .img-content").addClass("hover-animation-2000ms");
-  }, 1500);
-
-
+  // 질문 슬라이드 버튼
   var question_slide_btn_right = $(".page1 .btn-slider-wrapper .slide-btn.right");
   var question_slide_btn_left = $(".page1 .btn-slider-wrapper .slide-btn.left");
   question_slide_btn_left.on("click", function () {
@@ -33,11 +30,12 @@ $(document).ready(function () {
     var current_posX = slide_holder.css("transform").split(/[()]/)[1].split(",")[4].trim();
 
     if (current_posX < 0) {
-      // 슬라이드 아이템의 크기(438px)만큼 이동한다.
+      console.log(current_posX);
+      // 슬라이드 아이템의 크기의 두 배(876px)만큼 이동한다.
       slide_holder.css("transform", "translateX(" + (parseInt(current_posX) + 876) + "px)");
       // 애니메이션이 끝난 뒤에 버튼 숨김 여부를 체크한다.
       setTimeout(function () {
-        btn_show_and_hide("page1", -5200)
+        btn_show_and_hide("page1", -5300);
       }, 200);
     }
   });
@@ -45,14 +43,16 @@ $(document).ready(function () {
     var slide_holder = $(".page1 .slide-holder");
     var current_posX = slide_holder.css("transform").split(/[()]/)[1].split(",")[4].trim();
 
-    if (current_posX > -5200) {
+    if (current_posX > -5300) {
+      console.log(current_posX);
       slide_holder.css("transform", "translateX(" + (parseInt(current_posX) - 876) + "px)");
       setTimeout(function () {
-        btn_show_and_hide("page1", -5200)
+        btn_show_and_hide("page1", -5300);
       }, 200);
     }
   });
 
+  // 리뷰 슬라이드 버튼
   var review_slide_btn_right = $(".page5 .btn-slider-wrapper .slide-btn.right");
   var review_slide_btn_left = $(".page5 .btn-slider-wrapper .slide-btn.left");
   review_slide_btn_left.on("click", function () {
@@ -60,8 +60,9 @@ $(document).ready(function () {
     var current_posX = slide_holder.css("transform").split(/[()]/)[1].split(",")[4].trim();
 
     if (current_posX < 0) {
-      // 슬라이드 아이템의 크기(438px)만큼 이동한다.
-      slide_holder.css("transform", "translateX(" + (parseInt(current_posX) + 876) + "px)");
+      console.log(current_posX);
+      // 슬라이드 아이템의 크기의 두 배(1060px)만큼 이동한다.
+      slide_holder.css("transform", "translateX(" + (parseInt(current_posX) + 1060) + "px)");
       // 애니메이션이 끝난 뒤에 버튼 숨김 여부를 체크한다.
       setTimeout(function () {
         btn_show_and_hide("page5", -6300)
@@ -73,13 +74,15 @@ $(document).ready(function () {
     var current_posX = slide_holder.css("transform").split(/[()]/)[1].split(",")[4].trim();
 
     if (current_posX > -6300) {
-      slide_holder.css("transform", "translateX(" + (parseInt(current_posX) - 876) + "px)");
+      console.log(current_posX);
+      slide_holder.css("transform", "translateX(" + (parseInt(current_posX) - 1060) + "px)");
       setTimeout(function () {
         btn_show_and_hide("page5", -6300)
       }, 200);
     }
   });
 
+  // 모달창 띄우고 모달 외 스크롤 방지
   var question_detail_btn = $(".page1 .slide-item");
   question_detail_btn.on("click", function () {
     $(".question-detail-container").css("display", "block");
@@ -91,47 +94,10 @@ $(document).ready(function () {
     $(".question-detail-container").css("display", "none");
     $("body").removeClass("stop-scrolling");
   });
-
 });
 
-$(document).scroll(function() {
-  var y = $(this).scrollTop();
-  // if (y > 0) {
-  //   console.log("gooood");
-  //   addClass($(".container-2 .text"), "bottom-up");
-  // } else {
-  //   console.log(y);
-  //   $(".container-2 .text").removeClass("bottom-up");
-  // }
-
-
-  if (y > 600) {
-    // 숫자 올라가는 애니메이션
-
-  }
-
-  if (y > 460) {
-    console.log(y);
-    $(".question-holder .question").slice(0, 3).each(function(i) {
-      console.log(i);
-      var e = $(this);
-      e.addClass("top-down-"+(100-25*i)+"-animation");
-
-      // setTimeout(function() {
-      //   // e.addClass("top-down-"+(100-25*i)+"-animation");
-      //   e.addClass("from-right-animation");
-      // }, i * 400);
-    });
-  } else {
-
-  }
-});
-
-var addClass = function(jquery_obj, class_name) {
-  jquery_obj.addClass(class_name);
-};
-
-var btn_show_and_hide = function(target, max_offset) {
+// 버튼 클릭 후에 위치 확인 후 버튼 숨김
+var btn_show_and_hide = function(target, min_x_position) {
   var slide_btn_left = $("."+target+" .btn-slider-wrapper .slide-btn.left");
   var slide_btn_right = $("."+target+" .btn-slider-wrapper .slide-btn.right");
   var current_posX = $("."+target+" .slide-holder").css("transform").split(/[()]/)[1].split(",")[4].trim();
@@ -144,7 +110,7 @@ var btn_show_and_hide = function(target, max_offset) {
     slide_btn_left.css("display", "none");
   }
 
-  if (current_posX < max_offset) {
+  if (current_posX < min_x_position) {
     slide_btn_right.css("opacity", "0");
     slide_btn_right.css("display", "none");
   } else {

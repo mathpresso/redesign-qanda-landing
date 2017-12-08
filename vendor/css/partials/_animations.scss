@@ -110,9 +110,14 @@
   animation: from-right 0.65s cubic-bezier(.23,.78,.67,.92);
 }
 
+.question-slide-animation-1 { animation: card-1 1.6s cubic-bezier(.23,.78,.67,.92); }
+.question-slide-animation-2 { animation: card-2 1.2s cubic-bezier(.23,.78,.67,.92); }
+.question-slide-animation-3 { animation: card-3 0.8s cubic-bezier(.23,.78,.67,.92); }
+.question-slide-animation-4 { animation: card-4 0.4s cubic-bezier(.23,.78,.67,.92); }
+
 @keyframes from-right {
   0% {
-    opacity: 0;
+    opacity: 0.7;
     transform: translateX(100px);
   }
   100% {
@@ -120,6 +125,55 @@
     transform: translateX(0);
   }
 }
+
+@keyframes card-1 {
+  0% {
+    opacity: 0.7;
+    transform: translateX(1752px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-2 {
+  0% {
+    opacity: 0.7;
+    transform: translateX(1314px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-3 {
+  0% {
+    opacity: 0.7;
+    transform: translateX(876px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-4 {
+  0% {
+    opacity: 0.7;
+    transform: translateX(438px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 // For 0.65s, screen out -> screen in
 @keyframes slide {
