@@ -1,10 +1,14 @@
 {% extends "landing_web/base.html" %}
+{% load staticfiles %}
 
 {% block container %}
-  안녕 난 프렌차이즈야
-  {% include 'landing_web/franchise/partials/container1.html' %}
-  {% include 'landing_web/franchise/partials/container2.html' %}
-  {% include 'landing_web/franchise/partials/container3.html' %}
-  {% include 'landing_web/franchise/partials/container4.html' %}
-  {% include 'landing_web/franchise/partials/container5.html' %}
+  {% include "landing_web/franchise/partials/cover.html" %}
+  {% include "landing_web/franchise/partials/page1.html" %}
+  {% include "landing_web/franchise/partials/page2.html" %}
+  {% include "landing_web/franchise/partials/page3.html" %}
+{% endblock %}
+
+{% block javascript %}
+  <script src="{% static 'js/animations.js' %}?version=0.1.0"></script>
+  <script src="{% static 'js/scroll_animations.js' %}?version=0.1.0"></script>
 {% endblock %}

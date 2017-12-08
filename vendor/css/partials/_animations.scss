@@ -66,14 +66,18 @@
 ///////////////////////////////////////////////////
 // Element moves from bottom to initial position //
 ///////////////////////////////////////////////////
-.bottom-up-animation {
+.bottom-up-animation-650ms {
   animation: bottom-up 0.65s cubic-bezier(.23,.78,.67,.92);
+}
+
+.bottom-up-animation-1500ms {
+  animation: bottom-up 1.5s cubic-bezier(.23,.78,.67,.92);
 }
 
 @keyframes bottom-up {
   0% {
-    opacity: 0.7;
-    transform: translateY(100px);
+    opacity: 0.3;
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
@@ -123,7 +127,49 @@
   100% { transform: translateX(0); }
 }
 
+.fade-in-animation {
+  animation: fade-in 0.65s cubic-bezier(.23,.78,.67,.92);
+}
+
 @keyframes fade-in {
   0%   { opacity: 0; }
   100% { opacity: 1 }
+}
+
+.blink-animation-2000ms {
+  animation: blink 2000ms infinite;
+}
+
+@keyframes blink {
+  0% {
+      opacity: 1;
+      transform: translate(0, -5px);
+  }
+
+  50% {
+      opacity: 0.7;
+      transform: translate(0, 5px);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(0, -5px);
+  }
+}
+
+.hover-animation-2000ms {
+  animation: hover 2000ms ease-in-out infinite;
+}
+
+@keyframes hover {
+  0% {
+      transform: translate(0, 0px);
+  }
+
+  50% {
+      transform: translate(0, 10px);
+  }
+
+  100% {
+      transform: translate(0, 0px);
+  }
 }

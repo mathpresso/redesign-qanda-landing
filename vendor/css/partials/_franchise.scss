@@ -1,0 +1,85 @@
+/*------------------------------------------
+# common
+------------------------------------------*/
+
+/*--------------------------------------------
+# pc
+--------------------------------------------*/
+@media only screen and (min-width: 769px) {
+  .franchise {
+    //overflow: hidden;
+  }
+
+  .cover {
+    height: 1080px;
+    position: relative;
+
+    .wrapper {
+      height: 100%;
+
+      .content {
+        position: relative;
+
+        .img-container {
+          position: absolute;
+          top: -170px;
+          right: -720px;
+
+          img {
+            width: 597px;
+            height: auto;
+          }
+        }
+      }
+
+      .certs-for-franc {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+
+        .cert-for-franc {
+          padding-left: 50px;
+          position: relative;
+          width: 33%;
+
+          .cert-meta1 {
+            font-size: 70px;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .franchise-certs {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+
+    .franchise-cert {
+      width: 33%;
+      position: relative;
+      .cert-meta1 {
+        position: absolute;
+        font-size: 80px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------
+# mobile
+--------------------------------------------*/
+@media only screen and (max-width: 768px) {
+  .franchise {
+    overflow: hidden;
+    text-align: center;
+  }
+
+}
+/*---------------------------------------------
+# mobile-small
+---------------------------------------------*/

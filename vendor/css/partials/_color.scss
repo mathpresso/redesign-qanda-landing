@@ -3,7 +3,9 @@
 .cyan { color: $cyan; }
 .black { color: $black; }
 .dark-gray { color: $dark-gray; }
+.dark-gray2 { color: $dark-gray2; }
 .warm-gray { color: $warm-gray; }
+.warm-gray2 { color: $warm-gray2; }
 .white { color: $white; }
 
 // background-color
@@ -11,6 +13,8 @@
 .bg-cyan { background-color: $cyan; }
 .bg-black { background-color: $black; }
 .bg-dark-gray { background-color: $dark-gray; }
+.bg-dark-gray2 { background-color: $dark-gray2; }
 .bg-warm-gray { background-color: $warm-gray; }
+.bg-warm-gray2 { background-color: $warm-gray2; }
 .bg-white { background-color: $white; }
 .bg-gradient-white-to-black { background-image: linear-gradient(#ffffff, #f0f0f0); }

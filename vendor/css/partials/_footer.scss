@@ -1,12 +1,29 @@
 .footer {
   background-color: #222121;
 
+
   .wrapper {
+    max-width: 320px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
 
     .footer-info2 {
       text-align: right;
+
+
     }
   }
+}
+
+@media only screen and (min-width: 769px) {
+  .mathpresso-logo { width: 200px; }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer .wrapper h4 {
+    font-size: 10px;
+  }
+
+  .mathpresso-logo { width: 100px; }
 }

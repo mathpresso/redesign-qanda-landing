@@ -6,7 +6,7 @@
 # pc
 --------------------------------------------*/
 @media only screen and (min-width: 769px) {
-  .page {
+  .home {
     overflow: hidden;
   }
 
@@ -28,14 +28,6 @@
 
       .content {
         position: relative;
-
-        .download {
-          padding: 30px 0;
-
-          img {
-            margin-right: 20px;
-          }
-        }
 
         .img-container {
           position: absolute;
@@ -127,8 +119,19 @@
         background-color: transparent;
         width: 70px;
         height: 70px;
-        border: 1px solid $white;
+        border: 1.5px solid $white;
         border-radius: 50%;
+
+        img {
+          width: 30px;
+          position: absolute;
+          top: 30%;
+          left: 28%;
+        }
+
+        &:hover {
+          background-color: $dark-gray;
+        }
       }
     }
   }
@@ -157,6 +160,8 @@
 
   .page3 {
     height: 960px;
+    background: url("/vendor/img/4-bg.png") 50% 60% no-repeat;
+    background-size: 30%;
 
     .wrapper {
       display: block;
@@ -223,6 +228,10 @@
     background: url("/vendor/img/6-bg@2x.png") no-repeat 0 200px;
     background-size: 1000px;
 
+    .title {
+      margin-right: 150px;
+    }
+
     .certs {
       margin: 60px 0 30px;
       display: flex;
@@ -248,6 +257,7 @@
 
       .slide-holder {
         .slide-item {
+          overflow: scroll;
           background-color: $white;
           width: 500px;
           padding: 30px;
@@ -340,14 +350,9 @@
 # mobile
 --------------------------------------------*/
 @media only screen and (max-width: 768px) {
-  .page {
+  .home {
     overflow: hidden;
     text-align: center;
-
-    .wrapper {
-      max-width: none;
-      width: 100%;
-    }
   }
 
   .wrapper {
@@ -355,16 +360,6 @@
     display: block;
     height: auto;
 
-    .content {
-      .download {
-      padding: 0;
-
-        img {
-          width: 100px;
-          margin: 0 5px;
-        }
-      }
-    }
   }
 
   .cover {
@@ -384,7 +379,7 @@
   }
 
   .page1 {
-    margin: 60px auto;
+    margin: 40px auto 0;
     position: relative;
 
     .wrapper {
@@ -395,6 +390,7 @@
 
       .btn-slider-wrapper {
         width: 100%;
+        padding-bottom: 20px;
         overflow: scroll;
 
         .slide-holder {
@@ -410,19 +406,25 @@
       }
 
       .btn-slider-wrapper .slide-item .question {
-        opacity: 0;
+        text-align: left;
+        opacity: 1;
         position: relative;
-        background-color: rgba(0,0,0,0.7);
+        background-color: rgba(0,0,0,0.4);
         width: 100%;
         height: 100%;
+        padding: 20px;
 
         h2 {
           font-weight: 700;
         }
 
-        .date { margin-bottom: 1rem; }
+        .date {
+          margin-bottom: 1rem;
+        }
 
-        .subject { margin-bottom: 6rem; }
+        .subject {
+          margin-bottom: 6rem;
+        }
 
         .type {
           position: absolute;
@@ -435,12 +437,6 @@
           bottom: 12px;
         }
       }
-
-      //.btn-slider-wrapper .slide-item:hover .question {
-      //  opacity: 1;
-      //  transition: 0.3s ease-in-out;
-      //}
-
     }
 
     .question-detail-container {
@@ -455,31 +451,46 @@
       .question-detail-scroller {
         position: relative;
         overflow: scroll;
-        width: 960px;
+        width: 320px;
         margin: 30px auto;
-        height: 1040px;
+        height: 90%;
 
         .chat-scroll-image {
           width: 100%;
           position: absolute;
           top: 0;
+          left: 0;
         }
       }
+
       .cancel-detail-btn {
         position: absolute;
-        top: 30px;
-        right: 30px;
-        background-color: transparent;
-        width: 70px;
-        height: 70px;
-        border: 1px solid $white;
+        top: 10px;
+        right: 10px;
+        background-color: $dark-gray;
+        opacity: 0.8;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
+
+        img {
+          width: 12px;
+          position: absolute;
+          top: 31%;
+          left: 27%;
+        }
+
+        &:hover {
+          background-color: $dark-gray;
+        }
       }
     }
   }
 
   .page2 {
     .wrapper {
+      margin-top: 40px;
+
       .content {
         position: relative;
         overflow: hidden;
@@ -497,21 +508,26 @@
   }
 
   .page3 {
+    background: url("/vendor/img/4-bg.png") -50px 15% no-repeat;
+    background-size: 80%;
   }
 
   .page4 {
-    background: url("/vendor/img/m-5-bg.jpg") no-repeat -30px -50px;
-    background-size: 120%;
+    background: url("/vendor/img/m-5-bg.jpg") repeat -30px -50px;
+    background-size: 110%;
     color: white;
 
     .wrapper {
       .screen-slider-container {
         .device {
-          margin-top: 60px;
+          margin-top: 80px;
         }
         .slide-controller {
           background-color: $dark-gray;
-          .slide-tab { }
+          height: 100%;
+          .slide-tab {
+            border-bottom: 1px solid $warm-gray;
+          }
           .slide-item {
             color: $warm-gray;
 
@@ -520,30 +536,39 @@
               border-top-color: $orange;
             }
           }
+
+          .slide-desc {
+          }
         }
       }
     }
   }
 
   .page5 {
-    margin: 200px auto;
+    height: 900px;
+    margin: 30px auto 45px;
     position: relative;
     // 배경 속성 순서: 이미지, 반복 여부, 위치
-    background: url("/vendor/img/6-bg@2x.png") no-repeat 0 200px;
-    background-size: 1000px;
+    background: url("/vendor/img/6-bg@2x.png") no-repeat 0px 600px;
+    background-size: 400px;
+
+    .title {
+      margin: 0 30px;
+      font-size: 1.5rem;
+    }
 
     .certs {
-      margin: 60px 0 30px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      margin: 30px 0;
+      display: block;
 
       .cert {
-        height: 170px;
+        width: 200px;
+        margin: auto;
+        height: 120px;
         padding: 30px;
-        width: 100%;
         text-align: center;
-        background: url("/vendor/img/6-reward.png") center 30% no-repeat;
+        background: url("/vendor/img/6-reward.png") center 50% no-repeat;
+        background-size: 80%;
       }
     }
 
@@ -553,13 +578,19 @@
     }
 
     .btn-slider-wrapper {
-      overflow: visible;
+      overflow: scroll;
+      width: 100%;
+      height: 220px;
 
       .slide-holder {
+        transform: translateX(35px);
+
         .slide-item {
+          overflow: scroll;
           background-color: $white;
-          width: 500px;
-          padding: 30px;
+          width: 300px;
+          height: 200px;
+          padding: 20px;
           box-shadow: 0 6px 20px 4px rgba(109, 109, 109, 0.5);
 
           .review {
@@ -567,19 +598,22 @@
             justify-content: space-between;
 
             .review-img-container {
-              padding-top: 12px;
+              //padding-top: 12px;
 
-              .profile-img { width: 70px; }
+              .profile-img {
+                position: absolute;
+                width: 40px;
+                top: 20px;
+                right: 20px;
+              }
             }
 
             .review-content-container {
-              padding-left: 20px;
-
               .nickname { }
               .date { margin-top: 5px; }
               .content { line-height: 1.7; }
-              .star-container { margin: 10px 0; }
-              .star-container .star { width: 20px; }
+              .star-container { margin: 5px 0; }
+              .star-container .star { width: 10px; }
             }
           }
         }
@@ -595,50 +629,30 @@
 
       .slide-meta { margin: 30px 0; }
     }
-
   }
 
   .page6 {
-    height: 500px;
-
     .wrapper {
       display: block;
 
       .partners-logo {
-        margin-top: 60px;
-        width: 100%;
+        margin-top: 30px;
+        width: 90%;
       }
     }
   }
 
   .page7 {
-    height: 1000px;
+    margin-top: 50px;
+    height: auto;
 
     .wrapper {
-      display: flex;
-      align-items: center;
-      height: 100%;
+      .img-content {
+        margin: 25px 0;
 
-      .content {
-        position: relative;
-
-        .download {
-          padding: 30px 0;
-
-          img {
-            margin-right: 20px;
-          }
-        }
-
-        .img-container {
-          position: absolute;
-          top: -170px;
-          right: -720px;
-
-          img {
-            width: 100%;
-            height: auto;
-          }
+        img {
+          transform: translateX(19%);
+          width: 291.5px !important;
         }
       }
     }
