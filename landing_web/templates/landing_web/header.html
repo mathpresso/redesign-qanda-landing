@@ -8,18 +8,8 @@
       </a>
     </div>
     <ul class="header-menu">
-      <li class="header-item active"><a href="">앱</a></li>
-      <li class="header-item"><a href="">가맹점</a></li>
+      <li id="home" class="header-item"><a href="">앱</a></li>
+      <li id="franchise" class="header-item"><a href="">가맹점</a></li>
     </ul>
   </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-    var activeHeaderItem = $(".header-menu .active");
-    $(".header-item").hover(
-      function() { activeHeaderItem.removeClass("active"); },
-      function() { activeHeaderItem.addClass("active"); }
-    )
-  });
-</script>@
