@@ -1,4 +1,4 @@
-// deprecated :: 상하 스크롤 -> 좌우 스크롤로 바꿔줌. \
+// deprecated :: 상하 스크롤 -> 좌우 스크롤로 바꿔줌.
 // Reference: www.plus-ex.com
 // $(document).ready(function() {
   // // Scroll horizontally when scrolling vertically in question-container-wrapper

@@ -1,71 +1,6 @@
-//////////////////////////
-// Mobile screen slides //
-//////////////////////////
-.screen-slide {
-  animation: screen-slide 0.65s cubic-bezier(.23,.78,.67,.92);
-}
-
-// For 0.65s, screen out -> screen in
-@keyframes screen-slide {
-  0%   { transform: translateX(274px); }
-  100% { transform: translateX(0); }
-}
-
-////////////////////////////////////////////////
-// Element moves from top to initial position //
-////////////////////////////////////////////////
-.top-down-100-animation { animation: top-down-100 1.2s cubic-bezier(.23,.78,.67,.92); }
-.top-down-75-animation { animation: top-down-75 1.2s cubic-bezier(.23,.78,.67,.92); }
-.top-down-50-animation { animation: top-down-50 1.2s cubic-bezier(.23,.78,.67,.92); }
-.top-down-25-animation { animation: top-down-25 1.2s cubic-bezier(.23,.78,.67,.92); }
-
-@keyframes top-down-100 {
-  0% {
-    opacity: 0;
-    transform: translateX(1374px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes top-down-75 {
-  0% {
-    opacity: 0;
-    transform: translateX(916px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes top-down-50 {
-  0% {
-    opacity: 0;
-    transform: translateX(458px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes top-down-25 {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-///////////////////////////////////////////////////
-// Element moves from bottom to initial position //
-///////////////////////////////////////////////////
+/*--------------------------------------------
+# bottom-up 애니메이션
+--------------------------------------------*/
 .bottom-up-animation-650ms {
   animation: bottom-up 0.65s cubic-bezier(.23,.78,.67,.92);
 }
@@ -85,45 +20,14 @@
   }
 }
 
-/////////////////////////////////////////////////
-// Element moves from left to initial position //
-/////////////////////////////////////////////////
-.from-left-animation {
-  animation: from-left 0.65s cubic-bezier(.23,.78,.67,.92);
-}
-
-@keyframes from-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/////////////////////////////////////////////////
-// Element moves from left to initial position //
-/////////////////////////////////////////////////
-.from-right-animation {
-  animation: from-right 0.65s cubic-bezier(.23,.78,.67,.92);
-}
-
-.question-slide-animation-1 { animation: card-1 1.6s cubic-bezier(.23,.78,.67,.92); }
-.question-slide-animation-2 { animation: card-2 1.2s cubic-bezier(.23,.78,.67,.92); }
-.question-slide-animation-3 { animation: card-3 0.8s cubic-bezier(.23,.78,.67,.92); }
-.question-slide-animation-4 { animation: card-4 0.4s cubic-bezier(.23,.78,.67,.92); }
-
-@keyframes from-right {
-  0% {
-    opacity: 0.7;
-    transform: translateX(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/*--------------------------------------------
+# 카드 펼치는 듯한 애니메이션
+--------------------------------------------*/
+@media only screen and (min-width: 769px) {
+  .question-slide-animation-1 { animation: card-1 1.6s cubic-bezier(.23,.78,.67,.92); }
+  .question-slide-animation-2 { animation: card-2 1.2s cubic-bezier(.23,.78,.67,.92); }
+  .question-slide-animation-3 { animation: card-3 0.8s cubic-bezier(.23,.78,.67,.92); }
+  .question-slide-animation-4 { animation: card-4 0.4s cubic-bezier(.23,.78,.67,.92); }
 }
 
 @keyframes card-1 {
@@ -174,39 +78,32 @@
   }
 }
 
-
-// For 0.65s, screen out -> screen in
-@keyframes slide {
-  0%   { transform: translateX(291.5px); }
-  100% { transform: translateX(0); }
-}
-
-.fade-in-animation {
-  animation: fade-in 0.65s cubic-bezier(.23,.78,.67,.92);
-}
-
-@keyframes fade-in {
-  0%   { opacity: 0; }
-  100% { opacity: 1 }
-}
-
-.blink-animation-2000ms {
-  animation: blink 2000ms infinite;
-}
-
-@keyframes blink {
-  0% {
-      opacity: 1;
-      transform: translate(0, -5px);
+/*--------------------------------------------
+# 디바이스 스크린 슬라이드 애니메이션
+--------------------------------------------*/
+@media only screen and (min-width: 769px) {
+  // screen out -> screen in
+  @keyframes slide {
+    // 데스크톱 사이즈에서 디바이스 스크린 크기
+    0% {
+      transform: translateX(291.5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
+}
 
-  50% {
-      opacity: 0.7;
-      transform: translate(0, 5px);
-  }
-  100% {
-      opacity: 1;
-      transform: translate(0, -5px);
+@media only screen and (max-width: 768px) {
+  // screen out -> screen in
+  @keyframes slide {
+    // 데스크톱 사이즈에서 디바이스 스크린 크기
+    0% {
+      transform: translateX(250px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -218,11 +115,9 @@
   0% {
       transform: translate(0, 0px);
   }
-
   50% {
       transform: translate(0, 10px);
   }
-
   100% {
       transform: translate(0, 0px);
   }

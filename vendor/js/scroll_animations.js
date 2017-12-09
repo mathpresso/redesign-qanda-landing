@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  bottom_up_and_hover_on_load_animation();
+});
+
+$(document).ready(function() {
   $(window).on("scroll", count_up_animation);
 });
 
@@ -52,10 +56,21 @@ function count_up_animation() {
   }
 }
 
-// home-page2: 텍스트 bottom-up 후, 이미지 둥둥 뜨는 애니메이션
+// home-cover: 텍스트 bottom-up 후, 이미지 둥둥 뜨는 애니메이션
+function bottom_up_and_hover_on_load_animation() {
+  $(".home.cover .title, .home.cover .desc, .home.cover .btn-container").addClass("bottom-up-animation-1500ms");
+  setTimeout(function () {
+    $(".home.cover .img-container, .home.cover .img-content ").addClass("hover-animation-2000ms");
+  }, 600);
+}
+
+// home-page2: 위와 동일
 function bottom_up_and_hover_when_scrolling_animation() {
   if ($(".home.page2").position().top - 400 < $(window).scrollTop()) {
-    $(".home.page2 .title, .page2 .desc").addClass("bottom-up-animation-1500ms");
-    $(".home.page2 .img-container").addClass("hover-animation-2000ms");
+    $(".home.page2 .title, .home.page2 .desc").addClass("bottom-up-animation-1500ms");
+    setTimeout(function () {
+      $(".home.page2 .img-container").addClass("hover-animation-2000ms");
+    }, 600);
   }
 }
+
